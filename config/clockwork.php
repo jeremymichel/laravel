@@ -31,7 +31,7 @@ return [
 
 	'web' => env('CLOCKWORK_WEB', true),
 
-	'web_dark_theme' => env('CLOCKWORK_WEB_DARK_THEME', false),
+	'web_dark_theme' => env('CLOCKWORK_WEB_DARK_THEME', true),
 
 	/*
 	|--------------------------------------------------------------------------
