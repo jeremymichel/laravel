@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Console\Commands\ModelMakeCommand;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Override default location and namespace of generated models to app/models/ directory
+        $this->app->extend('command.model.make', function ($command, $app) {
+            return new ModelMakeCommand($app['files']);
+        });
     }
 
     /**
